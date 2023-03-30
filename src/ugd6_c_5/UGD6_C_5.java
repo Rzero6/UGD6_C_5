@@ -26,7 +26,9 @@ public class UGD6_C_5 {
     public static void main(String[] args) {
         //Scanner scan = new Scanner (System.in);
         // TODO code application logic here
-        System.out.println("Heluuu");
+        try{
+            
+        }catch(Exception e){}
     }
 
 }
