@@ -25,7 +25,10 @@ public class Buku {
     }
     
     public void showBuku(){
-        System.out.println("");
+        System.out.println("\tNama Buku         : "+nama);
+        System.out.println("\tPengarang Buku    : "+pengarang);
+        System.out.println("\tTahun terbit Buku : "+tahunTerbit);
+        System.out.println("\tHarga Buku        : "+harga);
     }
     
 }
