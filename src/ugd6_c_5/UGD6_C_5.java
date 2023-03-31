@@ -34,24 +34,24 @@ public class UGD6_C_5 {
         
         try{
             System.out.println("*** Input Data Perpus ***");
-            System.out.println("Nama perpus     : ");namaPerpus=br.readLine();
-            System.out.println("Alamat Perpus   : ");alamatPerpus=br.readLine();
-            System.out.println("Jumlah Rak Buku : ");jumlahRak = Integer.parseInt(br.readLine());
+            System.out.print("Nama perpus     : ");namaPerpus=br.readLine();
+            System.out.print("Alamat Perpus   : ");alamatPerpus=br.readLine();
+            System.out.print("Jumlah Rak Buku : ");jumlahRak = Integer.parseInt(br.readLine());
             Perpus perpus = new Perpus(namaPerpus, alamatPerpus, jumlahRak);
             
             for(int i=0; i<jumlahRak; i++){
                 System.out.println("\n\t*** Input Data Rak Buku ***");
-                System.out.println("\tNama rak Buku     : ");namaRak = br.readLine();
-                System.out.println("\tJenis Rak Buku    : ");jenisRak=br.readLine();
-                System.out.println("\tJumlah Buku       : ");jumlahBuku=Integer.parseInt(br.readLine());
+                System.out.print("\tNama rak Buku     : ");namaRak = br.readLine();
+                System.out.print("\tJenis Rak Buku    : ");jenisRak=br.readLine();
+                System.out.print("\tJumlah Buku       : ");jumlahBuku=Integer.parseInt(br.readLine());
                 RakBuku rakBuku = perpus.addRakBuku(namaRak, jenisRak, jumlahBuku);
                 for(int j=0; j<jumlahBuku; j++){
-                    System.out.println("\n\t*** Input Rak Buku ***");
-                    System.out.println("Nama Buku       : ");nama=br.readLine();
-                    System.out.println("Pengarang Buku  : ");pengarang=br.readLine();
-                    System.out.println("Tahun Terbit    : ");tahunTerbit=Integer.parseInt(br.readLine());
-                    System.out.println("Harga Buku      : ");harga=Float.parseFloat(br.readLine());
-                    rakBuku.addBuku(namaRak, pengarang, tahunTerbit, harga);
+                    System.out.println("\n\t*** Input Data Buku ***");
+                    System.out.print("Nama Buku       : ");nama=br.readLine();
+                    System.out.print("Pengarang Buku  : ");pengarang=br.readLine();
+                    System.out.print("Tahun Terbit    : ");tahunTerbit=Integer.parseInt(br.readLine());
+                    System.out.print("Harga Buku      : ");harga=Float.parseFloat(br.readLine());
+                    rakBuku.addBuku(nama, pengarang, tahunTerbit, harga);
                 }
             }
             perpus.showPerpus();
