@@ -33,7 +33,7 @@ public class Perpus {
         System.out.println("Nama Perpus\t: "+namaPerpus);
         System.out.println("Alamat Perpus\t: "+alamatPerpus);
         System.out.println("Jumlah Rak Buku: "+jumlahRak);
-        for(int i=0;i<rakBuku.length;i++){ 
+        for(int i=0;i<rakBuku.length;i++){
             System.out.println("\t*** Tampil Rak Buku ***");
             System.out.println("\tData Rak Buku ke "+(i+1));
             rakBuku[i].showRakBuku();
