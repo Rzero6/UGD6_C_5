@@ -27,8 +27,14 @@ public class RakBuku {
     }
     
     public void showRakBuku(){
-        System.out.println("");
+        System.out.println("Nama Rak Buku       : "+namaRak);
+        System.out.println("Jenis Rak Buku      : "+jenisRak);
+        System.out.println("Total Semua harga   : "+hitungTotalHargaBuku());
+        System.out.println("Jumlah Buku         : "+jumlahBuku);
+        
         for(int i = 0;i<buku.length;i++){
+            System.out.println("\n\t*** Tampil Data Buku ***");
+            System.out.println("Data Buku Ke    : "+(i+1));
             buku[i].showBuku();
         }
     }
