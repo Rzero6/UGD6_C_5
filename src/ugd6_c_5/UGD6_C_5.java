@@ -26,7 +26,7 @@ public class UGD6_C_5 {
     public static void main(String[] args) {
         //Scanner scan = new Scanner (System.in);
         // TODO code application logic here
-        String namaperpus, alamatperpus;
+        String namaPerpus, alamatPerpus;
         String namaRak, jenisRak;
         String nama, pengarang;
         int jumlahRak, jumlahBuku, tahunTerbit;
@@ -34,23 +34,24 @@ public class UGD6_C_5 {
         
         try{
             System.out.println("*** Input Data Perpus ***");
-            System.out.println("Nama perpus     : ");namaperpus=br.readLine();
-            System.out.println("Alamat Perpus   : ");alamatperpus=br.readLine();
+            System.out.println("Nama perpus     : ");namaPerpus=br.readLine();
+            System.out.println("Alamat Perpus   : ");alamatPerpus=br.readLine();
             System.out.println("Jumlah Rak Buku : ");jumlahRak = Integer.parseInt(br.readLine());
-            Perpus perpus = new perpus(namaPerpus, alamatPerpus, jumlahRak);
+            Perpus perpus = new Perpus(namaPerpus, alamatPerpus, jumlahRak);
             
             for(int i=0; i<jumlahRak; i++){
                 System.out.println("\n\t*** Input Data Rak Buku ***");
                 System.out.println("\tNama rak Buku     : ");namaRak = br.readLine();
                 System.out.println("\tJenis Rak Buku    : ");jenisRak=br.readLine();
                 System.out.println("\tJumlah Buku       : ");jumlahBuku=Integer.parseInt(br.readLine());
-                
+                RakBuku rakBuku = perpus.addRakBuku(namaRak, jenisRak, jumlahBuku);
                 for(int j=0; j<jumlahBuku; j++){
                     System.out.println("\n\t*** Input Rak Buku ***");
                     System.out.println("Nama Buku       : ");nama=br.readLine();
                     System.out.println("Pengarang Buku  : ");pengarang=br.readLine();
                     System.out.println("Tahun Terbit    : ");tahunTerbit=Integer.parseInt(br.readLine());
                     System.out.println("Harga Buku      : ");harga=Float.parseFloat(br.readLine());
+                    rakBuku.addBuku(namaRak, pengarang, tahunTerbit, harga);
                 }
             }
             perpus.showPerpus();
