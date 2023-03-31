@@ -12,5 +12,31 @@ public class Perpus {
     private String namaPerpus,alamatPerpus;
     private int jumlahRak;
     private RakBuku rakBuku[];
+    private int counter=0;
+
+    public Perpus(String namaPerpus, String alamatPerpus, int jumlahRak) {
+        this.namaPerpus = namaPerpus;
+        this.alamatPerpus = alamatPerpus;
+        this.jumlahRak = jumlahRak;
+        this.rakBuku = new RakBuku[jumlahRak];
+    }
     
+    public RakBuku addRakBuku(String namaRak, String jenisRak, int jumlahBuku){
+        RakBuku rb = new RakBuku(namaRak, jenisRak, jumlahBuku);
+        rakBuku[counter] = rb;
+        counter++;
+        return rb;
+    }
+    
+    public void showPerpus(){
+        System.out.println("***** Tampil Data Perpus *****");
+        System.out.println("Nama Perpus\t: "+namaPerpus);
+        System.out.println("Alamat Perpus\t: "+alamatPerpus);
+        System.out.println("Jumlah Rak Buku: "+jumlahRak);
+        for(int i=0;i<rakBuku.length;i++){
+            System.out.println("***** Tampil Rak Buku *****");
+            System.out.println("Data Rak Buku ke "+(i+1));
+            rakBuku[i].showRakBuku();
+        }
+    }
 }
