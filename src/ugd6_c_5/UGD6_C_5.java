@@ -29,7 +29,8 @@ public class UGD6_C_5 {
         String namaPerpus, alamatPerpus;
         String namaRak, jenisRak;
         String nama, pengarang;
-        int jumlahRak, jumlahBuku, tahunTerbit;
+        String namaOrang;
+        int jumlahRak, jumlahBuku, tahunTerbit, jumlahOrang, lama_hari;
         float harga;
         
         try{
@@ -37,7 +38,8 @@ public class UGD6_C_5 {
             System.out.print("Nama perpus     : ");namaPerpus=br.readLine();
             System.out.print("Alamat Perpus   : ");alamatPerpus=br.readLine();
             System.out.print("Jumlah Rak Buku : ");jumlahRak = Integer.parseInt(br.readLine());
-            Perpus perpus = new Perpus(namaPerpus, alamatPerpus, jumlahRak);
+            System.out.print("Jumlah Orang    : ");jumlahOrang=Integer.parseInt(br.readLine());
+            Perpus perpus = new Perpus(namaPerpus, alamatPerpus, jumlahRak, jumlahOrang);
             
             for(int i=0; i<jumlahRak; i++){
                 System.out.println("\n\t*** Input Data Rak Buku ***");
@@ -53,6 +55,13 @@ public class UGD6_C_5 {
                     System.out.print("\t\tHarga Buku      : ");harga=Float.parseFloat(br.readLine());
                     rakBuku.addBuku(nama, pengarang, tahunTerbit, harga);
                 }
+            }
+            for(int i=0; i<jumlahOrang; i++){
+                System.out.println("\n\t*** Input Data Denda ***");
+                System.out.print("\tNama Orang          : ");namaOrang = br.readLine();
+                System.out.print("\tTotal Hari Telat    : "); lama_hari = Integer.parseInt(br.readLine());
+                Denda denda = new Denda(namaOrang, lama_hari);
+                perpus.addDenda(denda);
             }
             perpus.showPerpus();
         }catch(Exception e){}
